@@ -1,0 +1,48 @@
+{
+    "employees": [
+        {
+            "name": "John Doe",
+            "email": "john.doe@company.com",
+            "role": "Software Engineer",
+            "performance_metrics": {
+                "productivity": 70,
+                "teamwork": 90,
+                "communication": 88
+            },
+            "recent_achievements": [
+                "Completed project X ahead of schedule",
+                "Mentored 2 junior developers",
+                "Implemented new CI/CD pipeline"
+            ]
+        },
+        {
+            "name": "Jane Smith",
+            "email": "jane.smith@company.com",
+            "role": "Product Manager",
+            "performance_metrics": {
+                "productivity": 92,
+                "teamwork": 95,
+                "communication": 90
+            },
+            "recent_achievements": [
+                "Launched new feature Y",
+                "Improved team velocity by 20%",
+                "Successfully managed cross-functional project"
+            ]
+        },
+        {
+            "name": "Mike Johnson",
+            "email": "mike.johnson@company.com",
+            "role": "UX Designer",
+            "performance_metrics": {
+                "productivity": 78,
+                "teamwork": 85,
+                "communication": 82
+            },
+            "recent_achievements": [
+                "Redesigned user interface for mobile app",
+                "Conducted user research with 50 participants"
+            ]
+        }
+    ]
+}

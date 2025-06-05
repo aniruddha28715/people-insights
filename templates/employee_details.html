@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow rounded-lg p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">{{ employee.name }}</h1>
+        <span class="px-4 py-2 text-sm rounded-full bg-blue-100 text-blue-800">{{ employee.role }}</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Performance Metrics -->
+        <div class="bg-gray-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Performance Metrics</h2>
+            
+            <form action="{{ url_for('update_metrics', email=employee.email) }}" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Productivity</label>
+                    <input type="number" name="productivity" 
+                           value="{{ employee.performance_metrics.productivity }}"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           min="0" max="100">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Teamwork</label>
+                    <input type="number" name="teamwork" 
+                           value="{{ employee.performance_metrics.teamwork }}"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           min="0" max="100">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Communication</label>
+                    <input type="number" name="communication" 
+                           value="{{ employee.performance_metrics.communication }}"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           min="0" max="100">
+                </div>
+                
+                <button type="submit" 
+                        class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    Update Metrics
+                    <i class="fas fa-save ml-2"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Recent Achievements -->
+        <div class="bg-gray-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Recent Achievements</h2>
+            <ul class="space-y-3">
+                {% for achievement in employee.recent_achievements %}
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span class="text-gray-700">{{ achievement }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Insights Preview -->
+    <div class="mt-6 bg-gray-50 rounded-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Insights Preview</h2>
+            <form action="{{ url_for('send_insights', email=employee.email) }}" method="POST" class="inline">
+                <button type="submit" 
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                    Send Insights
+                    <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+        <div class="bg-white rounded-lg p-4 border">
+            <pre class="whitespace-pre-wrap text-sm text-gray-700">{{ insights }}</pre>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add any JavaScript for interactive features here
+</script>
+{% endblock %} 

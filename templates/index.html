@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow rounded-lg p-6">
+    <h1 class="text-2xl font-bold mb-6">Employee Dashboard</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for employee in employees %}
+        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">{{ employee.name }}</h2>
+                    <span class="px-3 py-1 text-sm rounded-full 
+                        {% if employee.performance_metrics.productivity >= 85 %}bg-green-100 text-green-800
+                        {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                        {{ employee.role }}
+                    </span>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Productivity</span>
+                        <div class="w-32 bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" 
+                                 style="width: {{ employee.performance_metrics.productivity }}%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">{{ employee.performance_metrics.productivity }}%</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Teamwork</span>
+                        <div class="w-32 bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-green-600 h-2.5 rounded-full" 
+                                 style="width: {{ employee.performance_metrics.teamwork }}%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">{{ employee.performance_metrics.teamwork }}%</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Communication</span>
+                        <div class="w-32 bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-purple-600 h-2.5 rounded-full" 
+                                 style="width: {{ employee.performance_metrics.communication }}%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">{{ employee.performance_metrics.communication }}%</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="{{ url_for('employee_details', email=employee.email) }}" 
+                       class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        View Details
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 
