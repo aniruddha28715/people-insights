@@ -11,13 +11,13 @@ A modern dashboard for tracking employee performance and sending automated perfo
 
 ## Live Demo
 
-Visit the live dashboard at: [https://yourusername.github.io/people-insights/](https://yourusername.github.io/people-insights/)
+Visit the live dashboard at: [https://aniruddha28715.github.io/people-insights/](https://aniruddha28715.github.io/people-insights/)
 
 ## Local Development
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/people-insights.git
+git clone https://github.com/aniruddha28715/people-insights.git
 cd people-insights
 ```
 
@@ -82,7 +82,7 @@ The dashboard is automatically deployed to GitHub Pages when changes are pushed 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/people-insights.git
+git clone https://github.com/aniruddha28715/people-insights.git
 cd people-insights
 ```
 
@@ -126,12 +126,12 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/yourusername/people-insights.git
+git remote add origin https://github.com/aniruddha28715/people-insights.git
 git push -u origin main
 ```
 
 4. The GitHub Action will automatically deploy your site to GitHub Pages
-   - Your site will be available at `https://yourusername.github.io/people-insights`
+   - Your site will be available at `https://aniruddha28715.github.io/people-insights`
 
 ### Heroku Deployment
 
@@ -380,4 +380,4 @@ For support, email support@example.com or create an issue in the repository.
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by [Aniruddha Kulkarni] 
