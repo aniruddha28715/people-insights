@@ -81,7 +81,7 @@ http://localhost:8000
 
 Here's a look at the main dashboard displaying all employee cards:
 
-![Main Dashboard View](docs/screenshots/main-dashboard.png)
+![Main Dashboard View](docs/screenshots/Main Dashboard View.png)
 
 - **Employee Cards Display**
   - Employee name and role
@@ -98,13 +98,13 @@ Here's a look at the main dashboard displaying all employee cards:
 
 Detail view of employee performance metrics:
 
-![Employee Performance Metrics Detail](docs/screenshots/performance-metrics.png)
+![Employee Performance Metrics Detail](docs/screenshots/Performance Metrics View.png)
 
 ### Managing Employee Information
 
 Here's the modal for editing employee details:
 
-![Edit Employee Details Modal](docs/screenshots/edit-details-modal.png)
+![Edit Employee Details Modal](docs/screenshots/Edit Modal View.png)
 
 1. **Access Edit Mode**
    - Click "Edit Details" on employee card
@@ -134,7 +134,7 @@ Here's the modal for editing employee details:
 
 This is the modal for composing and sending performance emails:
 
-![Send Performance Email Modal](docs/screenshots/edit-email-modal.png)
+![Send Performance Email Modal](docs/screenshots/Email Modal View.png)
 
 1. **Initiate Email Process**
    - Click "Send Email" button
