@@ -139,4 +139,177 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Flask documentation
 - TailwindCSS for the beautiful UI
-- All contributors who have helped improve this project 
+- All contributors who have helped improve this project
+
+## 🛠️ Technical Architecture
+
+### Backend Framework
+- **Flask (v2.0.1)**: Lightweight Python web framework
+  - Handles routing and request processing
+  - Manages application state
+  - Provides template rendering engine
+  - Implements RESTful API endpoints
+
+### Frontend Technologies
+- **HTML5**: Structure and content
+- **TailwindCSS**: Utility-first CSS framework for responsive design
+- **Jinja2 (v3.1.2)**: Template engine for dynamic HTML generation
+  - Template inheritance
+  - Dynamic content rendering
+  - Control structures and filters
+
+### Data Management
+- **JSON**: Data storage format
+  - Employee information
+  - Performance metrics
+  - Achievement records
+- **Pandas (v2.1.0)**: Data manipulation and analysis
+  - Performance data processing
+  - Metrics calculations
+  - Data transformation
+
+### Security & Configuration
+- **python-dotenv (v0.19.0)**: Environment variable management
+  - Secure configuration handling
+  - API key management
+  - Environment-specific settings
+- **Flask-WTF (v1.2.1)**: Form handling and CSRF protection
+  - Form validation
+  - Security measures
+  - Input sanitization
+
+### API & Communication
+- **Requests (v2.26.0)**: HTTP library for API calls
+  - External service integration
+  - Webhook notifications
+  - API communication
+- **Flask-CORS (v4.0.0)**: Cross-Origin Resource Sharing
+  - API access control
+  - Security headers
+  - Cross-origin requests handling
+
+### Performance & Deployment
+- **Gunicorn (v21.2.0)**: WSGI HTTP Server
+  - Production deployment
+  - Process management
+  - Load balancing
+- **WhiteNoise (v6.6.0)**: Static file serving
+  - Efficient static file delivery
+  - Caching optimization
+  - CDN-like functionality
+
+### Email Integration
+- **SendGrid (v6.9.7)**: Email service integration
+  - Performance report delivery
+  - Email templating
+  - Delivery tracking
+
+## 🔄 Application Flow
+
+1. **Request Handling**
+   ```python
+   @app.route('/employee/<email>')
+   def employee_details(email):
+       # Load employee data
+       # Generate insights
+       # Render template
+   ```
+
+2. **Data Processing**
+   ```python
+   def get_performance_verdict(metrics):
+       # Calculate performance level
+       # Generate automated analysis
+       # Return performance verdict
+   ```
+
+3. **Template Rendering**
+   ```html
+   {% extends "base.html" %}
+   {% block content %}
+       <!-- Dynamic content rendering -->
+   {% endblock %}
+   ```
+
+4. **Form Processing**
+   ```python
+   @app.route('/update_metrics/<email>', methods=['POST'])
+   def update_metrics(email):
+       # Process form data
+       # Update metrics
+       # Save changes
+   ```
+
+## 📊 Performance Metrics System
+
+### Metric Categories
+1. **Productivity**
+   - Task completion rate
+   - Project delivery
+   - Quality of work
+
+2. **Teamwork**
+   - Collaboration effectiveness
+   - Support to team members
+   - Team contribution
+
+3. **Communication**
+   - Clarity of communication
+   - Responsiveness
+   - Documentation quality
+
+### Automated Analysis
+```python
+def get_performance_analysis(metrics):
+    if (metrics['productivity'] >= 90 and 
+        metrics['teamwork'] >= 90 and 
+        metrics['communication'] >= 90):
+        return "Exceptional performance..."
+    # Additional analysis logic
+```
+
+## 🔐 Security Features
+
+1. **Input Validation**
+   - Form data sanitization
+   - Type checking
+   - Range validation
+
+2. **Data Protection**
+   - Environment variable usage
+   - Secure configuration
+   - API key management
+
+3. **Access Control**
+   - Route protection
+   - Admin authentication
+   - Session management
+
+## 🚀 Deployment Architecture
+
+### Development Environment
+- Flask development server
+- Debug mode enabled
+- Local file storage
+
+### Production Environment
+- Gunicorn WSGI server
+- WhiteNoise for static files
+- Environment-specific configuration
+
+## 📈 Performance Optimization
+
+1. **Caching**
+   - Static file caching
+   - Template caching
+   - Data caching
+
+2. **Database Optimization**
+   - Efficient JSON structure
+   - Indexed lookups
+   - Optimized queries
+
+3. **Resource Management**
+   - Static file serving
+   - Memory usage optimization
+   - Connection pooling 
