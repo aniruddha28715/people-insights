@@ -5,30 +5,38 @@
             "email": "john.doe@company.com",
             "role": "Software Engineer",
             "performance_metrics": {
-                "productivity": 70,
-                "teamwork": 90,
-                "communication": 88
+                "productivity": 75,
+                "teamwork": 50,
+                "communication": 100
             },
             "recent_achievements": [
                 "Completed project X ahead of schedule",
                 "Mentored 2 junior developers",
                 "Implemented new CI/CD pipeline"
-            ]
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-10",
+                "remarks": "Meets basic expectations. Has potential for improvement in all areas."
+            }
         },
         {
             "name": "Jane Smith",
             "email": "jane.smith@company.com",
             "role": "Product Manager",
             "performance_metrics": {
-                "productivity": 92,
-                "teamwork": 95,
-                "communication": 90
+                "productivity": 100,
+                "teamwork": 50,
+                "communication": 0
             },
             "recent_achievements": [
                 "Launched new feature Y",
                 "Improved team velocity by 20%",
                 "Successfully managed cross-functional project"
-            ]
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-10",
+                "remarks": "Performance needs significant improvement. Immediate attention required in multiple areas."
+            }
         },
         {
             "name": "Mike Johnson",
@@ -42,7 +50,101 @@
             "recent_achievements": [
                 "Redesigned user interface for mobile app",
                 "Conducted user research with 50 participants"
-            ]
+            ],
+            "admin_remarks": {
+                "last_updated": "2024-03-10",
+                "remarks": "Creative designer with good technical skills. Could improve on meeting deadlines."
+            }
+        },
+        {
+            "name": "Aniruddha Kulkarni",
+            "email": "aniruddhak28715@gmail.com",
+            "role": "Product Manager",
+            "performance_metrics": {
+                "productivity": 88,
+                "teamwork": 90,
+                "communication": 44
+            },
+            "recent_achievements": [
+                "complete a project on time."
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-10",
+                "remarks": "Performance needs significant improvement. Immediate attention required in multiple areas."
+            }
+        },
+        {
+            "name": "Rishikesh ",
+            "email": "rkumthekar100@gmail.com",
+            "role": "Software Engineer",
+            "performance_metrics": {
+                "productivity": 30,
+                "teamwork": 66,
+                "communication": 20
+            },
+            "recent_achievements": [
+                "Implemented new CI/CD pipeline"
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-11",
+                "remarks": "Performance needs significant improvement. Immediate attention required in multiple areas.",
+                "reviewed": true
+            }
+        },
+        {
+            "name": "Sujit",
+            "email": "sujit@gmail.com",
+            "role": "Product Manager",
+            "performance_metrics": {
+                "productivity": 20,
+                "teamwork": 60,
+                "communication": 40
+            },
+            "recent_achievements": [
+                "took the follow-up for development department"
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-11",
+                "remarks": "Performance needs significant improvement. Immediate attention required in multiple areas.",
+                "reviewed": true
+            }
+        },
+        {
+            "name": "Swanand",
+            "email": "swanand@gmail.com",
+            "role": "Data Scientist",
+            "performance_metrics": {
+                "productivity": 11,
+                "teamwork": 30,
+                "communication": 100
+            },
+            "recent_achievements": [
+                "Complete the Data-Extraction assignment."
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-11",
+                "remarks": "Performance needs significant improvement. Immediate attention required in multiple areas.",
+                "reviewed": true
+            }
+        },
+        {
+            "name": "Arvind ",
+            "email": "arvindkulkarni09@gmail.com",
+            "role": "DevOps Engineer",
+            "performance_metrics": {
+                "productivity": 50,
+                "teamwork": 60,
+                "communication": 100
+            },
+            "recent_achievements": [
+                "Complete the Project Assignment",
+                "Set-up a full pipeline"
+            ],
+            "admin_remarks": {
+                "last_updated": "2025-06-11",
+                "remarks": "Meets basic expectations. Has potential for improvement in all areas.",
+                "reviewed": true
+            }
         }
     ]
 }

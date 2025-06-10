@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Admin Panel - Employee Performance Verdicts
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            Automated performance analysis based on metrics.
+        </p>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="border-t border-gray-200">
+        <div class="bg-white px-4 py-5 sm:p-6">
+            <div class="mb-6">
+                <h4 class="text-lg font-medium text-gray-900 mb-4">Recent Notifications</h4>
+                <div class="space-y-4">
+                    {% for employee in employees %}
+                        {% if employee.admin_remarks.remarks == "New employee - Initial assessment pending" %}
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h5 class="text-sm font-medium text-blue-800">New Employee Registration</h5>
+                                    <p class="text-sm text-blue-600 mt-1">
+                                        {{ employee.name }} ({{ employee.role }}) has been registered.
+                                    </p>
+                                    <p class="text-xs text-blue-500 mt-1">
+                                        Registered on: {{ employee.admin_remarks.last_updated }}
+                                    </p>
+                                </div>
+                                <a href="{{ url_for('employee_details', email=employee.email) }}" 
+                                   class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
+                                    Review
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Existing Employee List -->
+            <div class="mt-8">
+                <h4 class="text-lg font-medium text-gray-900 mb-4">All Employees</h4>
+                <div class="space-y-6">
+                    {% for employee in employees %}
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">{{ employee.name }}</h4>
+                                <p class="text-sm text-gray-500">{{ employee.role }}</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">
+                                    Last Updated: {{ employee.admin_remarks.last_updated }}
+                                </div>
+                                <div class="mt-2">
+                                    <span class="px-3 py-1 rounded-full text-sm font-medium
+                                        {% if employee.performance_metrics.productivity >= 90 and 
+                                              employee.performance_metrics.teamwork >= 90 and 
+                                              employee.performance_metrics.communication >= 90 %}
+                                            bg-green-100 text-green-800
+                                        {% elif employee.performance_metrics.productivity >= 75 and 
+                                              employee.performance_metrics.teamwork >= 75 and 
+                                              employee.performance_metrics.communication >= 75 %}
+                                            bg-blue-100 text-blue-800
+                                        {% elif employee.performance_metrics.productivity >= 50 and 
+                                              employee.performance_metrics.teamwork >= 50 and 
+                                              employee.performance_metrics.communication >= 50 %}
+                                            bg-yellow-100 text-yellow-800
+                                        {% else %}
+                                            bg-red-100 text-red-800
+                                        {% endif %}">
+                                        {% if employee.performance_metrics.productivity >= 90 and 
+                                              employee.performance_metrics.teamwork >= 90 and 
+                                              employee.performance_metrics.communication >= 90 %}
+                                            Outstanding Performance
+                                        {% elif employee.performance_metrics.productivity >= 75 and 
+                                              employee.performance_metrics.teamwork >= 75 and 
+                                              employee.performance_metrics.communication >= 75 %}
+                                            Good Performance
+                                        {% elif employee.performance_metrics.productivity >= 50 and 
+                                              employee.performance_metrics.teamwork >= 50 and 
+                                              employee.performance_metrics.communication >= 50 %}
+                                            Average Performance
+                                        {% else %}
+                                            Needs Improvement
+                                        {% endif %}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 grid grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <div class="text-sm font-medium text-gray-500">Productivity</div>
+                                <div class="mt-1 text-lg font-semibold
+                                    {% if employee.performance_metrics.productivity >= 90 %}
+                                        text-green-600
+                                    {% elif employee.performance_metrics.productivity >= 75 %}
+                                        text-blue-600
+                                    {% elif employee.performance_metrics.productivity >= 50 %}
+                                        text-yellow-600
+                                    {% else %}
+                                        text-red-600
+                                    {% endif %}">
+                                    {{ employee.performance_metrics.productivity }}%
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm font-medium text-gray-500">Teamwork</div>
+                                <div class="mt-1 text-lg font-semibold
+                                    {% if employee.performance_metrics.teamwork >= 90 %}
+                                        text-green-600
+                                    {% elif employee.performance_metrics.teamwork >= 75 %}
+                                        text-blue-600
+                                    {% elif employee.performance_metrics.teamwork >= 50 %}
+                                        text-yellow-600
+                                    {% else %}
+                                        text-red-600
+                                    {% endif %}">
+                                    {{ employee.performance_metrics.teamwork }}%
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm font-medium text-gray-500">Communication</div>
+                                <div class="mt-1 text-lg font-semibold
+                                    {% if employee.performance_metrics.communication >= 90 %}
+                                        text-green-600
+                                    {% elif employee.performance_metrics.communication >= 75 %}
+                                        text-blue-600
+                                    {% elif employee.performance_metrics.communication >= 50 %}
+                                        text-yellow-600
+                                    {% else %}
+                                        text-red-600
+                                    {% endif %}">
+                                    {{ employee.performance_metrics.communication }}%
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-white rounded-lg border">
+                            <h5 class="text-sm font-medium text-gray-700 mb-2">Performance Analysis:</h5>
+                            <p class="text-sm text-gray-600">
+                                {% if employee.performance_metrics.productivity >= 90 and 
+                                      employee.performance_metrics.teamwork >= 90 and 
+                                      employee.performance_metrics.communication >= 90 %}
+                                    Exceptional performance across all metrics. Consistently exceeds expectations in productivity, teamwork, and communication.
+                                {% elif employee.performance_metrics.productivity >= 75 and 
+                                      employee.performance_metrics.teamwork >= 75 and 
+                                      employee.performance_metrics.communication >= 75 %}
+                                    Strong performance with good balance across all areas. Shows consistent delivery and effective collaboration.
+                                {% elif employee.performance_metrics.productivity >= 50 and 
+                                      employee.performance_metrics.teamwork >= 50 and 
+                                      employee.performance_metrics.communication >= 50 %}
+                                    Meets basic expectations. Has potential for improvement in all areas.
+                                {% else %}
+                                    Performance needs significant improvement. Immediate attention required in multiple areas.
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
