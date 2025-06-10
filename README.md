@@ -56,6 +56,46 @@ A comprehensive employee performance management system built with Flask that hel
    - New employee registration form
    - Success confirmation
 
+## Screenshots
+
+### Dashboard View
+![Dashboard View](docs/screenshots/Dashboard%20View.png)
+The main dashboard provides a comprehensive overview of all employees, their performance metrics, and recent achievements. Each employee card displays key performance indicators and a quick summary of their recent accomplishments.
+
+### Employee Dashboard Card
+![Employee Dashboard Card](docs/screenshots/Employee%20Dashboard%20Card.png)
+Individual employee cards show:
+- Performance metrics (Productivity, Teamwork, Communication)
+- Recent achievements
+- Performance status indicators
+- Quick access to detailed view
+
+### Employee Details
+![Employee Details](docs/screenshots/Employee%20Details.png)
+The detailed employee view includes:
+- Complete performance metrics
+- Achievement management system
+- Performance analysis and trends
+- Detailed achievement history
+- Performance update form
+
+### Admin Panel
+![Admin Panel](docs/screenshots/Admin%20panel.png)
+The admin interface provides:
+- Complete employee list
+- Performance review tools
+- Notification system
+- Performance analytics
+- Employee management controls
+
+### Registration Process
+![Register Process](docs/screenshots/Register%20Process.png)
+The employee registration system includes:
+- New employee registration form
+- Automated performance assessment
+- Initial achievement tracking
+- Welcome notification system
+
 ## 🚀 Getting Started
 
 ### Prerequisites
