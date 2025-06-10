@@ -1,216 +1,142 @@
 # People Insights Dashboard
 
-A comprehensive, interactive dashboard designed to streamline employee performance tracking and facilitate effective performance communication. This tool helps managers and HR professionals monitor, evaluate, and communicate employee performance metrics in a user-friendly interface.
+A comprehensive employee performance management system built with Flask that helps track, analyze, and improve employee performance through metrics, achievements, and automated insights.
 
-## 🌟 Key Features
+## 🌟 Features
 
-### 📊 Employee Performance Tracking
-- **Comprehensive Metrics**
-  - Productivity score (0-100)
-  - Teamwork effectiveness rating
-  - Communication skills assessment
-  - Visual progress bars for quick insights
-  - Color-coded performance indicators
+### Employee Management
+- **Employee Registration**: Easy onboarding process for new employees
+- **Performance Metrics**: Track three key metrics:
+  - Productivity
+  - Teamwork
+  - Communication
+- **Achievement Tracking**: 
+  - Add and manage employee achievements
+  - View achievement history
+  - Real-time achievement updates
 
-- **Achievement Management**
-  - Track recent accomplishments
-  - Add new achievements with timestamps
-  - Remove outdated achievements
-  - Achievement history tracking
+### Performance Analysis
+- **Automated Performance Verdicts**: Based on performance metrics:
+  - Outstanding Performance (≥90% in all metrics)
+  - Good Performance (≥75% in all metrics)
+  - Average Performance (≥50% in all metrics)
+  - Needs Improvement (<50% in any metric)
+- **Detailed Performance Analysis**: Automated insights based on metrics
+- **Visual Performance Indicators**: Color-coded performance status
 
-### 🔄 Interactive Employee Management
-- **Real-time Updates**
-  - Instant performance metric updates
-  - Live achievement tracking
-  - Dynamic UI updates
-  - No page refresh required
+### Admin Features
+- **Admin Dashboard**: Centralized view of all employees
+- **Performance Review**: Easy access to employee details and metrics
+- **Notification System**: Track new employee registrations
+- **Metrics Management**: Update and manage performance metrics
 
-- **Detailed Employee Profiles**
-  - Personal information management
-  - Role and department tracking
-  - Performance history
-  - Achievement timeline
+### Communication
+- **Automated Insights**: Generate and send performance insights
+- **Email Notifications**: Send performance updates to employees
+- **Terminal-based Email Preview**: View email content before sending
 
-### 📧 Performance Communication
-- **Email Integration**
-  - Pre-formatted performance templates
-  - Customizable email content
-  - Performance summary inclusion
-  - Achievement highlights
+## 📸 Screenshots Needed
+1. **Dashboard View**
+   - Main dashboard showing employee cards
+   - Performance metrics visualization
+   - Recent achievements preview
 
-- **Communication Tools**
-  - Email preview functionality
-  - Performance report generation
-  - Custom message composition
-  - Template management
+2. **Employee Details**
+   - Individual employee performance page
+   - Performance metrics update form
+   - Achievement management section
+   - Performance analysis display
 
-## 🚀 Live Demo
+3. **Admin Panel**
+   - Admin dashboard overview
+   - New employee notifications
+   - Performance review interface
 
-Experience the dashboard in action: [https://aniruddha28715.github.io/people-insights/](https://aniruddha28715.github.io/people-insights/)
+4. **Registration Process**
+   - New employee registration form
+   - Success confirmation
 
-## 💻 Local Development Setup
+## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.x
+- Python 3.8+
+- pip (Python package manager)
 - Git
-- Modern web browser (Chrome, Firefox, Safari, or Edge)
 
-### Installation Steps
+### Installation
 
-1. **Clone the Repository**
+1. Clone the repository:
 ```bash
 git clone https://github.com/aniruddha28715/people-insights.git
 cd people-insights
 ```
 
-2. **Start Local Server**
+2. Create and activate virtual environment:
 ```bash
-cd docs
-python3 -m http.server 8000
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. **Access the Dashboard**
-Open your browser and navigate to:
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
 ```
-http://localhost:8000
+
+4. Run the application:
+```bash
+python app.py
 ```
 
-## 📖 Detailed Usage Guide
-
-### Viewing Employee Performance
-
-Here's a look at the main dashboard displaying all employee cards:
-
-![Main Dashboard View](docs/screenshots/Main Dashboard View.png)
-
-- **Employee Cards Display**
-  - Employee name and role
-  - Current performance metrics
-  - Visual progress indicators
-  - Recent achievements list
-  - Quick action buttons
-
-- **Performance Metrics**
-  - Color-coded progress bars
-  - Numerical scores
-  - Trend indicators
-  - Achievement badges
-
-Detail view of employee performance metrics:
-
-![Employee Performance Metrics Detail](docs/screenshots/Performance Metrics View.png)
-
-### Managing Employee Information
-
-Here's the modal for editing employee details:
-
-![Edit Employee Details Modal](docs/screenshots/Edit Modal View.png)
-
-1. **Access Edit Mode**
-   - Click "Edit Details" on employee card
-   - View current information
-   - Access edit form
-
-2. **Update Information**
-   - Modify basic details:
-     - Name
-     - Email address
-     - Role/Position
-   - Adjust performance metrics:
-     - Productivity score
-     - Teamwork rating
-     - Communication score
-   - Manage achievements:
-     - Add new achievements
-     - Remove existing ones
-     - Update achievement dates
-
-3. **Save Changes**
-   - Review modifications
-   - Confirm updates
-   - View real-time changes
-
-### Sending Performance Emails
-
-This is the modal for composing and sending performance emails:
-
-![Send Performance Email Modal](docs/screenshots/Email Modal View.png)
-
-1. **Initiate Email Process**
-   - Click "Send Email" button
-   - Access email template
-
-2. **Customize Content**
-   - Edit email subject
-   - Modify email body
-   - Include performance metrics
-   - Add achievement highlights
-
-3. **Send Communication**
-   - Preview email content
-   - Confirm recipient
-   - Send performance update
+The application will be available at `http://127.0.0.1:5001`
 
 ## 🛠️ Technology Stack
 
-- **Frontend Technologies**
-  - HTML5 for structure
-  - TailwindCSS for responsive design
-  - JavaScript for interactivity
-  - Font Awesome for icons
+- **Backend**: Flask (Python)
+- **Frontend**: HTML, TailwindCSS
+- **Data Storage**: JSON
+- **Email**: Terminal-based preview system
+- **Containerization**: Docker
 
-- **Development Tools**
-  - Git for version control
-  - Python for local server
-  - Modern web browsers for testing
+## 📝 Recent Updates
 
-## 📁 Project Structure
+### Employee Achievement System
+- Added ability to add new achievements for employees
+- Achievement management in employee details page
+- Achievement preview on dashboard cards
 
-```
-people-insights/
-├── docs/                 # Static site files
-│   ├── index.html       # Main dashboard interface
-│   ├── js/              # JavaScript functionality
-│   │   └── dashboard.js # Core dashboard logic
-│   └── .nojekyll        # GitHub Pages configuration
-└── README.md            # Project documentation
-```
+### Admin Panel Improvements
+- Added notification system for new employees
+- Improved performance review interface
+- Automated performance verdicts
+
+### Performance Analysis
+- Implemented automated performance analysis
+- Added color-coded performance indicators
+- Enhanced metrics visualization
+
+### Email System
+- Implemented terminal-based email preview
+- Added performance insights email template
+- Improved email content formatting
 
 ## 🤝 Contributing
 
-We welcome contributions to improve the People Insights Dashboard! Here's how you can help:
-
-1. **Fork the Repository**
-   - Create your copy of the project
-   - Set up development environment
-
-2. **Create Feature Branch**
-   - Make a new branch for your changes
-   - Follow naming conventions
-
-3. **Make Changes**
-   - Implement new features
-   - Fix existing issues
-   - Update documentation
-
-4. **Submit Changes**
-   - Commit your modifications
-   - Push to your branch
-   - Create pull request
-
-5. **Code Review**
-   - Address feedback
-   - Make necessary adjustments
-   - Get approval for merge
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👨‍💻 Author
+## 👥 Authors
 
-Made with ❤️ by [Aniruddha Kulkarni]
+- **Aniruddha Kulkarni** - *Initial work* - [aniruddha28715](https://github.com/aniruddha28715)
 
----
+## 🙏 Acknowledgments
 
-For support or questions, please open an issue in the repository. 
+- Flask documentation
+- TailwindCSS for the beautiful UI
+- All contributors who have helped improve this project 
